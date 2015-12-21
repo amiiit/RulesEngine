@@ -1,16 +1,20 @@
+import {Rule} from '../rules'
+
 let expect = require('chai').expect
+
+let rawRule = {
+    "id": "is processed",
+    "function": "function(obj){ return obj.family == 'processed'}",
+    "true_id": "is processed healthy",
+    "false_id": null
+}
 
 describe('test rules', function () {
 
     it('parse rule', function () {
-        expect(true).to.equal(true)
+        let rule = new Rule(rawRule)
+        expect(rule.func({family: 'processed'})).to.be.true
+        expect(rule.func({family: 'xxxxxxxxx'})).not.to.be.true
     })
-
-
-    it('fail this', function () {
-        expect(false).to.equal(true)
-    })
-
-
 
 })

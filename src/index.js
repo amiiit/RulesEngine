@@ -13,6 +13,3 @@ const valuesFile = flagValue('-v')
 if (!rulesFile || !valuesFile) {
     Logger.info("Usage: node rulesengine-cli -r <rules_json_file> -v <values_json_file>")
 }
-console.log(rulesFile)
-console.log(valuesFile)
-
