@@ -1,10 +1,21 @@
-export class Rule {
+import Rule from './rule'
+import Logger from 're/logger'
 
-    constructor(ruleObject) {
-        this.id = ruleObject.id
-        this.func = eval("("+ruleObject.function + ")")
-        this.trueId = ruleObject.true_id
-        this.falseId = ruleObject.false_id
+export default class Rules {
+
+    constructor(rulesArray) {
+        this.rules = {}
+        rulesArray.forEach((rawRule) => {
+            let rule = new Rule(rawRule)
+            this.rules[rule.id] = rule
+        })
+        this.firstRule = this.rules[rulesArray[0].id]
+    }
+
+    apply(object, rule = this.firstRule) {
+        if (rule.function(object)){
+
+        }
     }
 
 }
