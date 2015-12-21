@@ -1,0 +1,39 @@
+{
+  "type": "values",
+  "name": "Input JSON value for feeding the utility to apply on rules",
+  "version": "0.0.1",
+  "values": [
+    {
+      "kind": "apple",
+      "family": "fruit",
+      "color": "green",
+      "ripeness": "0.7"
+    },
+    {
+      "kind": "olive",
+      "family": "fruit",
+      "color": "black",
+      "ripeness": "1"
+    },
+    {
+      "kind": "carrot",
+      "family": "vegetable",
+      "ripeness": "1.6"
+    },
+    {
+      "kind": "cucumber",
+      "family": "vegetable",
+      "ripeness": "1.1"
+    },
+    {
+      "kind": "miso paste",
+      "family": "processed",
+      "nutritionalValues": {
+        "calories": 250
+      },
+      "ingredients": [
+        "Soy beans", "Water", "E621"
+      ]
+    }
+  ]
+}

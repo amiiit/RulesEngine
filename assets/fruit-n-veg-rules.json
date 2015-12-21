@@ -1,0 +1,29 @@
+{
+  "type": "rules",
+  "rules": [
+    {
+      "id": "is fresh",
+      "function": "function(obj){ return ['fruit','vegetable'].indexOf(obj.family) > -1 }",
+      "true_id": "is ripe",
+      "false_id": "is processed"
+    },
+    {
+      "id": "is processed",
+      "function": "function(obj){ return obj.family == 'processed'}",
+      "true_id": "is processed healthy",
+      "false_id": null
+    },
+    {
+      "id": "is ripe",
+      "function": "function(obj){ return obj.ripeness && obj.ripeness > 0.8 && obj.ripeness < 1.2 }",
+      "true_id": null,
+      "false_id": null
+    },
+    {
+      "id": "is processed healthy",
+      "function": "function(obj){ return obj.nutritionalValues.calories <= 480 && obj.ingredients.indexOf('E621') == -1 }",
+      "true_id": null,
+      "false_id": null
+    }
+  ]
+}
