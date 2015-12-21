@@ -1,6 +1,5 @@
 import {Rule} from '../rules'
-
-let expect = require('chai').expect
+import {expect} from 'chai'
 
 let rawRule = {
     "id": "is processed",
