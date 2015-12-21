@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "webpack; node build/rulesengine-cli.js -v assets/fnv-values.json -r assets/fruit-n-veg-rules.json",
-    "test": "karma start"
+    "test": "webpack tests.webpack.js --output-filename test_bundle.js; mocha build/test_bundle.js"
   },
   "dependencies": {},
   "devDependencies": {
