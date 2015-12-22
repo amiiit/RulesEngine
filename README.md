@@ -3,8 +3,8 @@
 Rules engine is a cli utility that parses and validates data against a set of rules. This is a learning challenge and nothing that should be used in production.
 
 ```
-git clone git@gitlab.com:ajk/rulesengine.git
-cd rulesengine
+git clone git@github.com:amitit/RulesEngine.git
+cd RulesEngine
 npm install
 ```
 
