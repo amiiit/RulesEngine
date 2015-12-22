@@ -40,7 +40,9 @@ export default class Logger {
     }
 
     line(){
-        console.log('')
+        if (!this.options.silent){
+            console.log('')
+        }
     }
 
     failure(msg){

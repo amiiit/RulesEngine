@@ -40,3 +40,4 @@ npm test
 - terminal UI
 - support more formats for rules and values
 - integrate eslint
+- separate cli code from test bundle (avoid Usage notice when running the test suite)
