@@ -11,6 +11,34 @@ export default class Validator {
             this.rules[rule.id] = rule
         })
         this.firstRule = this.rules[rulesArray[0].id]
+        this.testForCircularity([], this.firstRule)
+    }
+
+    testForCircularity(traversedNodes = [], currentNode) {
+
+        let alreadyVisited = traversedNodes.find((node)=> {
+                return currentNode.id == node.id
+            }) != undefined
+
+        if (alreadyVisited) {
+            let nodeIds = traversedNodes.map((node)=> {
+                return node.id
+            })
+            let message = `Rules contain following cycle: [${nodeIds}] => ${currentNode.id}`
+            this.logger.failure(message)
+            throw message
+        }
+
+        let nodesList = [...traversedNodes, currentNode]
+
+        if (currentNode.trueId) {
+            this.testForCircularity(nodesList, this.rules[currentNode.trueId])
+        }
+
+        if (currentNode.falseId) {
+            this.testForCircularity(nodesList, this.rules[currentNode.falseId])
+        }
+
     }
 
     applyToObject(object) {
