@@ -28,8 +28,6 @@ describe('test rules', function () {
             }
         )
 
-        console.log('RULEEEE', rule)
-
         let dummyObjects = {
             processed: {family: 'processed', name: 'dummy object 1'},
             illegalFamily: {family: 'xxxxxxxxx', name: 'dummy object 2'}
