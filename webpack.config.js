@@ -11,12 +11,14 @@ module.exports = {
         root: path.resolve(__dirname),
         extensions: ['', '.js', '.jsx'],
         alias: {
-            re: 'src'
+            re: 'src',
+            assets: 'assets'
         }
     },
     module: {
         loaders: [
-            {test: /\.js$/, exclude: /node_modules/, loader: 'babel?presets[]=es2015'}
+            {test: /\.js$/, exclude: /node_modules/, loader: 'babel?presets[]=es2015'},
+            {test: /\.json$/, exclude: /node_modules/, loader: 'json'}
         ]
     }
 
