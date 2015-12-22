@@ -1,4 +1,6 @@
-import Logger from './logger'
+import Logger from 're/logger'
+import Rule from 're/rule'
+import Validator from 're/validator'
 
 const argv = process.argv;
 
@@ -14,3 +16,5 @@ const logger = new Logger()
 if (!rulesFile || !valuesFile) {
     logger.info("Usage: node rulesengine-cli -r <rules_json_file> -v <values_json_file>")
 }
+
+
