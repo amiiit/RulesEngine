@@ -20,7 +20,7 @@ export default class Logger {
     }
 
     colorLog(msg, colorCode = 0) {
-        if (!this.silent) {
+        if (!this.options.silent) {
             let identationTabs = ''
 
             for (let i = 0; i < this.identation; i++) {
