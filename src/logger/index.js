@@ -37,7 +37,10 @@ export default class Logger {
 
     success(msg){
         this.colorLog(msg, Colors.green)
+    }
 
+    line(){
+        console.log('')
     }
 
     failure(msg){

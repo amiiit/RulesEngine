@@ -29,14 +29,14 @@ export default class Validator {
             throw message
         }
 
-        let nodesList = [...traversedNodes, currentNode]
+        let alreadyVisitedNodeList = [...traversedNodes, currentNode]
 
         if (currentNode.trueId) {
-            this.testForCircularity(nodesList, this.rules[currentNode.trueId])
+            this.testForCircularity(alreadyVisitedNodeList, this.rules[currentNode.trueId])
         }
 
         if (currentNode.falseId) {
-            this.testForCircularity(nodesList, this.rules[currentNode.falseId])
+            this.testForCircularity(alreadyVisitedNodeList, this.rules[currentNode.falseId])
         }
 
     }
@@ -46,18 +46,17 @@ export default class Validator {
         this.logger.increaseIdent()
         this._recursiveApply(object, this.firstRule)
         this.logger.decreaseIdent()
-        this.logger.info('')
-
-
+        this.logger.line()
     }
 
-    apply(o) {
-        if (Array.isArray(o)) {
-            o.forEach((object)=> {
+    apply(objectOrArray) {
+        if (Array.isArray(objectOrArray)) {
+            objectOrArray.forEach((object)=> {
                 this.applyToObject(object)
             })
+
         } else {
-            this.applyToObject(o)
+            this.applyToObject(objectOrArray)
         }
     }
 
