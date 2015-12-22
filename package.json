@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "./node_modules/.bin/webppack",
+    "build": "./node_modules/.bin/webpack",
     "try": "./node_modules/.bin/webpack; node build/rulesengine-cli.js -v assets/fnv-values.json -r assets/fruit-n-veg-rules.json",
     "test": "./node_modules/.bin/webpack tests.webpack.js --output-filename test_bundle.js; ./node_modules/.bin/mocha build/test_bundle.js"
   },

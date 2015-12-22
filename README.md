@@ -8,6 +8,13 @@ cd RulesEngine
 npm install
 ```
 
+Try the utility with the supplied input data (see `assets/`):
+
+```
+npm run try
+```
+
+
 For building the utility:
 ```
 npm run build
