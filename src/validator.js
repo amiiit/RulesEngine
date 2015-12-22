@@ -3,7 +3,7 @@ import Logger from 're/logger'
 
 export default class Validator {
 
-    constructor(rulesArray, logger = Logger) {
+    constructor(rulesArray, logger = new Logger()) {
         this.rules = {}
         this.logger = logger
         rulesArray.forEach((rawRule) => {
