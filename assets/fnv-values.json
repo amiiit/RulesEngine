@@ -4,28 +4,33 @@
   "version": "0.0.1",
   "values": [
     {
+      "name": "apple",
       "kind": "apple",
       "family": "fruit",
       "color": "green",
       "ripeness": "0.7"
     },
     {
+      "name": "olive",
       "kind": "olive",
       "family": "fruit",
       "color": "black",
       "ripeness": "1"
     },
     {
+      "name": "carrot",
       "kind": "carrot",
       "family": "vegetable",
       "ripeness": "1.6"
     },
     {
+      "name": "cucumber",
       "kind": "cucumber",
       "family": "vegetable",
       "ripeness": "1.1"
     },
     {
+      "name": "miso paste",
       "kind": "miso paste",
       "family": "processed",
       "nutritionalValues": {

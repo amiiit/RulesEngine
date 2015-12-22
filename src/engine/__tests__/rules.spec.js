@@ -1,6 +1,7 @@
 import Rule from '../rule'
-import Rules from '../rules'
+import Rules from '../validator'
 import {expect} from 'chai'
+import Logger from 're/logger'
 
 let rawRule = {
     "id": "is processed",
@@ -18,15 +19,32 @@ let rawSetOfRules = [
 
 describe('test rules', function () {
 
-    it('parse rule', function () {
-        let rule = new Rule(rawRule)
-        expect(rule.function({family: 'processed'})).to.be.true
-        expect(rule.function({family: 'xxxxxxxxx'})).not.to.be.true
+    let logger
+    let rules
+    let rule
+    let dummyObjects
+
+    beforeEach(function () {
+        logger = new Logger({silent: true})
+        rules = new Rules(rawSetOfRules, logger)
+        rule = new Rule(rawRule)
+
+        dummyObjects = {
+            processed: {family: 'processed', name: 'dummy object 1'},
+            illegalFamily: {family: 'xxxxxxxxx', name: 'dummy object 2'}
+        }
     })
 
-    it('parse rules', function(){
-        let rules = new Rules(rawSetOfRules)
+    it('parse rule', function () {
+        expect(rule.function(dummyObjects.processed)).to.be.true
+        expect(rule.function(dummyObjects.illegalFamily)).not.to.be.true
+    })
+
+    it('parse rules', function () {
         expect(Object.keys(rules.rules).length).to.equal(4)
     })
 
+    it('apply rules', function () {
+        rules.apply(dummyObjects.processed)
+    })
 })

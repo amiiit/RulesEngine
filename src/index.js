@@ -9,7 +9,8 @@ const flagValue = (flag) => {
 
 const rulesFile = flagValue('-r')
 const valuesFile = flagValue('-v')
+const logger = new Logger()
 
 if (!rulesFile || !valuesFile) {
-    Logger.info("Usage: node rulesengine-cli -r <rules_json_file> -v <values_json_file>")
+    logger.info("Usage: node rulesengine-cli -r <rules_json_file> -v <values_json_file>")
 }
